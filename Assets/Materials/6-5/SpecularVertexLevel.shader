@@ -49,7 +49,7 @@ Shader "Custom/SpecularVertexLevel"
 
                 fixed3 specular = _LightColor0.rgb*_Specular.rgb*pow(saturate(dot(reflectDir,viewDir)),_Gloss);
 
-                o.color = ambient + diffuse +specular;
+                o.color = ambient +specular;
 
                 return o;
             }
@@ -62,5 +62,5 @@ Shader "Custom/SpecularVertexLevel"
 
         }
     }
-    FallBack "Diffuse"
+    FallBack "Specular"
 }
