@@ -78,7 +78,7 @@ Shader "Custom/NormalMapTangentSpace"
                     //让法线归一化 临时处理方案，应该有更好方法 2022-1-12
                     tangentNormal = normalize(tangentNormal);
                     
-                    fixed3 albedo = tex2D(_MainTex,i.uv).rgb * _Color.rgb;
+                    fixed3 albedo = tex2D(_MainTex,i.uv.xy).rgb * _Color.rgb;
                     fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz * albedo;
 
                     fixed3 diffuse = _LightColor0.rgb * albedo *saturate(dot(tangentNormal,tangentLightDir));
