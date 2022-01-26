@@ -51,6 +51,7 @@ Shader "Custom/RampTexture"
                     fixed3 worldlightDir = normalize(UnityWorldSpaceLightDir(i.worldPos));
                     fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz;
                     fixed halfLambert = 0.5 *dot(worldNormal, worldlightDir) + 0.5;
+                    //fixed halfLambert = saturate(dot(worldNormal, worldlightDir));
                     fixed3 diffuseColor = tex2D(_RampTex,fixed2(halfLambert,halfLambert)).rgb * _Color.rgb;
                     fixed3 diffuse = _LightColor0.rgb * diffuseColor;
                     fixed3 viewDir = normalize(UnityWorldSpaceViewDir(i.worldPos));
