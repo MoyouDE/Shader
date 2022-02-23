@@ -127,7 +127,7 @@ Shader "Custom/ForwardRendering"
                         fixed atten = 1.0;
                     #endif
 				#endif				
-				return fixed4(ambient + (diffuse + specular) * atten, 1.0);
+				return fixed4((diffuse + specular) * atten, 1.0);
 			}
             ENDCG
         }
